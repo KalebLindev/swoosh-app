@@ -10,24 +10,40 @@ import UIKit
 
 class SkillVC: UIViewController {
 
- 
+    var player: Player!
     
+    @IBOutlet weak var nextBtn: BorderButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(player.desiredLeague!)
+        
+        player = Player()
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onFinishTapped(_ sender: Any) {
-        performSegue(withIdentifier: "", sender: self)
+        //performSegue(withIdentifier: "", sender: self)
     }
     
     @IBAction func unwindFromLeagueVC(unwind: UIStoryboardSegue) {
-       
+        
     }
     
+    @IBAction func onBeginnerTapped(_ sender: Any) {
+        selectExperience(experienceType: "Beginner")
+    }
     
+    @IBAction func onBallerTapped(_ sender: Any) {
+        selectExperience(experienceType: "Baller")
+    }
+    
+    func selectExperience(experienceType: String) {
+        player.selectedSkillLevel = experienceType
+        nextBtn.isEnabled = true
+    }
     
 }
     
