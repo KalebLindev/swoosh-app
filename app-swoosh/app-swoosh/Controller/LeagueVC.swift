@@ -16,7 +16,13 @@ class LeagueVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onNextTapped(_ sender: Any) {
+        performSegue(withIdentifier: "SkillVCSegue", sender: self)
+     }
 
+    @IBAction func unwindFromSkillVC(unwind: UIStoryboardSegue) {
+        
+    }
     /*
     // MARK: - Navigation
 

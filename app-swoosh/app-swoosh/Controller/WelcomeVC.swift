@@ -18,7 +18,7 @@ class WelcomeVC: UIViewController {
         //bgImg.frame = view.frame
     }
 
-    @IBAction func unwindFromSkillVC(unwind: UIStoryboardSegue) {
+    @IBAction func unwindFromLeagueVC(unwind: UIStoryboardSegue) {
         
     }
     
