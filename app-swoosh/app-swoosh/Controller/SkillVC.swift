@@ -10,11 +10,27 @@ import UIKit
 
 class SkillVC: UIViewController {
 
+ 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func onFinishTapped(_ sender: Any) {
+        performSegue(withIdentifier: "", sender: self)
+    }
+    
+    @IBAction func unwindFromLeagueVC(unwind: UIStoryboardSegue) {
+       
+    }
+    
+    
+    
+}
+    
     
 
     /*
@@ -27,4 +43,3 @@ class SkillVC: UIViewController {
     }
     */
 
-}

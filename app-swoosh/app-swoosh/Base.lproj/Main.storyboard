@@ -102,7 +102,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-lI-2x6" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-lI-2x6" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="605" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34672095069999997" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -152,6 +152,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="wpI-X8-gFT" eventType="touchUpInside" id="fIp-Rb-ttF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNW-8W-hQl" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="343" height="50"/>
@@ -163,6 +166,9 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="wpI-X8-gFT" eventType="touchUpInside" id="zMo-bd-wnu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS6-n0-Iq8" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="130" width="343" height="50"/>
@@ -174,6 +180,9 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedTapper:" destination="wpI-X8-gFT" eventType="touchUpInside" id="nP8-Hn-OKF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -211,7 +220,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="VNZ-ik-fcm"/>
                     <connections>
-                        <segue destination="5cL-3G-5me" kind="presentation" identifier="SkillVCSegue" modalPresentationStyle="fullScreen" id="Fvk-fQ-sYK"/>
+                        <outlet property="nextBtn" destination="ye8-lI-2x6" id="z5u-4S-Fma"/>
+                        <segue destination="5cL-3G-5me" kind="presentation" identifier="SkillVCSegue" modalPresentationStyle="fullScreen" id="IBh-7u-KFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPd-CC-qEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,7 +268,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3f-vD-bA4" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3f-vD-bA4" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="608" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34672095069999997" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -268,6 +278,9 @@
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onFinishTapped:" destination="5cL-3G-5me" eventType="touchUpInside" id="ARu-h7-4Rq"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="5F2-cI-aSN">
                                 <rect key="frame" x="0.0" y="20" width="375" height="102.5"/>
@@ -279,7 +292,7 @@
                                             <constraint firstAttribute="width" constant="119" id="ua2-ii-Xby"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired League" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siP-N1-10w">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siP-N1-10w">
                                         <rect key="frame" x="116.5" y="75" width="142" height="27.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27.5" id="jQy-Uz-smB"/>
@@ -291,31 +304,33 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9B-5d-fxb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imd-6i-fbg">
                                 <rect key="frame" x="16" y="15" width="29" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="RFv-Mx-VlK"/>
-                                    <constraint firstAttribute="width" constant="29" id="afe-ao-ffC"/>
+                                    <constraint firstAttribute="width" constant="29" id="MEb-UC-JMC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="e3o-pa-BtV"/>
+                                    <constraint firstAttribute="height" constant="24" id="kVk-yj-oUb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="uAj-wS-K9s"/>
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="Xiq-HO-aom" kind="unwind" unwindAction="unwindFromSkillVCWithUnwind:" id="STc-xi-zGF"/>
+                                    <segue destination="Xiq-HO-aom" kind="unwind" unwindAction="unwindFromLeagueVCWithUnwind:" id="VOd-kH-6kd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="D3f-vD-bA4" firstAttribute="leading" secondItem="yDN-AL-4GL" secondAttribute="leading" constant="16" id="AH3-qm-jIl"/>
-                            <constraint firstItem="u9B-5d-fxb" firstAttribute="leading" secondItem="yDN-AL-4GL" secondAttribute="leading" constant="16" id="HTF-4P-FWZ"/>
-                            <constraint firstItem="u9B-5d-fxb" firstAttribute="top" secondItem="yDN-AL-4GL" secondAttribute="top" constant="15" id="MA3-5Q-3ne"/>
                             <constraint firstItem="N2p-cZ-qjt" firstAttribute="top" secondItem="5F2-cI-aSN" secondAttribute="bottom" constant="33.5" id="O0K-wn-fZh"/>
                             <constraint firstItem="5F2-cI-aSN" firstAttribute="top" secondItem="yDN-AL-4GL" secondAttribute="top" constant="20" id="PJU-3F-loC"/>
                             <constraint firstItem="yDN-AL-4GL" firstAttribute="trailing" secondItem="D3f-vD-bA4" secondAttribute="trailing" constant="16" id="X5N-ZY-COr"/>
                             <constraint firstItem="5F2-cI-aSN" firstAttribute="leading" secondItem="yDN-AL-4GL" secondAttribute="leading" id="ZVB-ou-G6z"/>
                             <constraint firstItem="yDN-AL-4GL" firstAttribute="bottom" secondItem="D3f-vD-bA4" secondAttribute="bottom" constant="9" id="ZW8-vZ-iVb"/>
+                            <constraint firstItem="Imd-6i-fbg" firstAttribute="top" secondItem="yDN-AL-4GL" secondAttribute="top" constant="15" id="ay1-5K-F3p"/>
                             <constraint firstItem="yDN-AL-4GL" firstAttribute="trailing" secondItem="N2p-cZ-qjt" secondAttribute="trailing" constant="16" id="bwG-y9-LdT"/>
                             <constraint firstItem="N2p-cZ-qjt" firstAttribute="leading" secondItem="yDN-AL-4GL" secondAttribute="leading" constant="16" id="c7J-9x-bhi"/>
                             <constraint firstItem="yDN-AL-4GL" firstAttribute="trailing" secondItem="5F2-cI-aSN" secondAttribute="trailing" id="smJ-tJ-H9s"/>
+                            <constraint firstItem="Imd-6i-fbg" firstAttribute="leading" secondItem="yDN-AL-4GL" secondAttribute="leading" constant="16" id="wGh-Bi-2X8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yDN-AL-4GL"/>
                     </view>
