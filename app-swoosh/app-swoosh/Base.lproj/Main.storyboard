@@ -37,6 +37,9 @@
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="wpI-X8-gFT" kind="presentation" modalPresentationStyle="fullScreen" id="ix6-Eb-ZuY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON GOING ALL OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueD-bi-X2g">
                                 <rect key="frame" x="54" y="174" width="267" height="37"/>
@@ -66,7 +69,6 @@
                             <constraint firstItem="Fud-LP-PSl" firstAttribute="width" secondItem="ueD-bi-X2g" secondAttribute="width" multiplier="1.35393" id="Iqp-3V-eXc"/>
                             <constraint firstItem="u6a-Ja-eGD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Iwa-Rg-lTH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iKH-GL-p3Z" secondAttribute="trailing" constant="16" id="OON-rR-BLc"/>
-                            <constraint firstItem="u6a-Ja-eGD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RNP-Vb-zSG"/>
                             <constraint firstItem="Fud-LP-PSl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VFX-Lb-hBi"/>
                             <constraint firstItem="6n4-FP-tC7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W2z-u1-XV6"/>
                             <constraint firstItem="ueD-bi-X2g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yiy-uZ-6Bw"/>
@@ -102,6 +104,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desiredLeagueBG" translatesAutoresizingMaskIntoConstraints="NO" id="oB4-0W-I1U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-lI-2x6" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="605" width="343" height="50"/>
@@ -115,8 +118,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-En-Ixa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="102.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-En-Ixa">
+                                <rect key="frame" x="0.0" y="25" width="375" height="102.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nim-VV-aXW">
                                         <rect key="frame" x="128" y="0.0" width="119" height="20"/>
@@ -136,12 +139,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="nim-VV-aXW" firstAttribute="top" secondItem="gjT-En-Ixa" secondAttribute="top" constant="20" id="Lzp-GG-AhZ"/>
-                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-Cz-0bt">
-                                <rect key="frame" x="16" y="150" width="343" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-Cz-0bt">
+                                <rect key="frame" x="16" y="177.5" width="343" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-Gc-des" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
@@ -178,27 +178,42 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuI-s4-55w">
+                                <rect key="frame" x="16" y="15" width="29" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="ZCj-dA-1of"/>
+                                    <constraint firstAttribute="height" constant="24" id="kxa-at-v7c"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="XMd-PH-Sw3" kind="unwind" unwindAction="unwindFromSkillVCWithUnwind:" id="6v9-pR-c7m"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.3026069092" green="0.58862937179999997" blue="0.30720117619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="gjT-En-Ixa" firstAttribute="top" secondItem="nzl-VM-XhQ" secondAttribute="top" constant="25" id="3bR-zd-IQG"/>
                             <constraint firstItem="M6f-Cz-0bt" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" constant="16" id="6h9-nV-p10"/>
                             <constraint firstItem="nzl-VM-XhQ" firstAttribute="trailing" secondItem="ye8-lI-2x6" secondAttribute="trailing" constant="16" id="8Xw-B7-ag6"/>
+                            <constraint firstItem="KuI-s4-55w" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" constant="16" id="H8v-Ko-PEW"/>
+                            <constraint firstItem="oB4-0W-I1U" firstAttribute="top" secondItem="nzl-VM-XhQ" secondAttribute="top" id="Mst-wb-oTF"/>
                             <constraint firstItem="nzl-VM-XhQ" firstAttribute="trailing" secondItem="M6f-Cz-0bt" secondAttribute="trailing" constant="16" id="OO2-HU-qg4"/>
-                            <constraint firstItem="oB4-0W-I1U" firstAttribute="top" secondItem="nzl-VM-XhQ" secondAttribute="top" id="T7g-Md-JiE"/>
                             <constraint firstItem="M6f-Cz-0bt" firstAttribute="top" secondItem="gjT-En-Ixa" secondAttribute="bottom" constant="50" id="V0n-Ya-1RC"/>
-                            <constraint firstItem="oB4-0W-I1U" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" id="e0k-6t-b2y"/>
+                            <constraint firstItem="oB4-0W-I1U" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" id="WCK-71-Bnz"/>
+                            <constraint firstItem="oB4-0W-I1U" firstAttribute="bottom" secondItem="nzl-VM-XhQ" secondAttribute="bottom" id="WHy-Qd-CZD"/>
                             <constraint firstItem="ye8-lI-2x6" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" constant="16" id="e4Q-C8-BRO"/>
                             <constraint firstItem="gjT-En-Ixa" firstAttribute="leading" secondItem="nzl-VM-XhQ" secondAttribute="leading" id="hlY-gs-XTJ"/>
                             <constraint firstItem="nzl-VM-XhQ" firstAttribute="bottom" secondItem="ye8-lI-2x6" secondAttribute="bottom" constant="12" id="mR4-Ph-f7R"/>
-                            <constraint firstAttribute="bottom" secondItem="oB4-0W-I1U" secondAttribute="bottom" id="mmf-UV-OfN"/>
+                            <constraint firstItem="KuI-s4-55w" firstAttribute="top" secondItem="nzl-VM-XhQ" secondAttribute="top" constant="15" id="pRC-bZ-D5Y"/>
+                            <constraint firstItem="oB4-0W-I1U" firstAttribute="trailing" secondItem="nzl-VM-XhQ" secondAttribute="trailing" id="sa2-kw-dvW"/>
                             <constraint firstItem="nzl-VM-XhQ" firstAttribute="trailing" secondItem="gjT-En-Ixa" secondAttribute="trailing" id="tSd-RU-25s"/>
-                            <constraint firstItem="oB4-0W-I1U" firstAttribute="trailing" secondItem="nzl-VM-XhQ" secondAttribute="trailing" id="w2l-tK-IhQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nzl-VM-XhQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="VNZ-ik-fcm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPd-CC-qEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XMd-PH-Sw3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="821.60000000000002" y="137.18140929535232"/>
         </scene>
@@ -298,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
